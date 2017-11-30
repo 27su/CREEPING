@@ -13,7 +13,6 @@ from utils import Timer
 from vec2d import vec2d
 from widgets import Box, MessageBoard
 
-
 class Creep(Sprite):
     """ A creep sprite that bounces off walls and changes its
         direction from time to time.
@@ -178,8 +177,9 @@ class Creep(Sprite):
     def mouse_click_event(self, pos):
         """ The mouse was clicked in pos.
         """
-        if self._point_is_inside(vec2d(pos)):
-            self._decrease_health(3)
+        if not self.game.paused:
+            if self._point_is_inside(vec2d(pos)):
+                self._decrease_health(3)
                 
     #------------------ PRIVATE PARTS ------------------#
     
@@ -612,7 +612,7 @@ class Game(object):
                 self.draw()
                 
             pygame.display.flip()
-
+                    
     def quit(self):
         sys.exit()
 
