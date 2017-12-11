@@ -64,7 +64,7 @@ class Creep(Sprite):
         self.game = game
         self.speed = speed
         self.field = field
-        
+
         # base_image_0/45 hold the original images, un-rotated
         #
         self.base_image_0 = creep_images[0]
@@ -139,6 +139,7 @@ class Creep(Sprite):
                 self.explode_animation.update(time_passed)
             else:
                 self._die()
+                self.game.score += 1
         
         elif self.state == Creep.DEAD:
             pass
@@ -328,7 +329,7 @@ class Game(object):
 
     def __init__(self):
         pygame.init()
-        
+        self.score = 0
         self.screen = pygame.display.set_mode(
                         (self.SCREEN_WIDTH, self.SCREEN_HEIGHT), 0, 32)
         self.tile_img = pygame.image.load(self.BG_TILE_IMG).convert_alpha()
@@ -599,7 +600,7 @@ class Game(object):
             
             if not self.paused:
                 msg1 = 'Creeps: %d' % len(self.creeps)
-                msg2 = ''
+                msg2 = 'Score: %d' % self.score
 
                 self.mboard_text = [msg1, msg2]
                 
