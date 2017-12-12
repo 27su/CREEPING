@@ -592,6 +592,10 @@ class Game(object):
                     elif event.key == pygame.K_g:
                         if pygame.key.get_mods() & pygame.KMOD_CTRL:
                             self.options['draw_grid'] = not self.options['draw_grid']
+		    elif event.key == pygame.K_r:
+			 game = Game()
+			 game.run()
+
                 elif (  event.type == pygame.MOUSEBUTTONDOWN and
                         event.button == 1):
                     for creep in self.creeps:
