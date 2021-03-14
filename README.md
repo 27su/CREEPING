@@ -31,3 +31,7 @@ https://github.com/eliben/code-for-blog/tree/master/2009/pygame_creeps_game
 - 점수화면 : 점수를 얼마나 획득했는지 화면에 표시하는 기능을 구현한다.   
 설명: 게임 Score 확인을 위해 Game 클래스에 score 인스턴스 변수를 추가하였다. score 변수는 __init__함수에서 0으로 초기화 된다. 그리고 creeps가 사용자의 이벤트 클릭에 의해 _die()가 호출될 때 마다 socre의 값을 1씩 증가하도록 구현하였다. 또한 게임 score 점수는 남은 creeps의 수를 표시하는 상자에서 확인 할 수 있도록 코드를 수정하였다.   
    
+      
+6) 실행화면      
+![image](https://user-images.githubusercontent.com/32132152/111058802-4e81e180-84d4-11eb-927d-08595c1bb879.png)
+     
